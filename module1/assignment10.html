@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Sum Probability Simulator</title>
+</head>
+<body>
+  <h2>Dice Sum Probability Simulator</h2>
+
+  <script>
+
+    const numDice = parseInt(prompt("Enter the number of dice:"));
+    const targetSum = parseInt(prompt("Enter the sum of eyes to check:"));
+
+
+    const simulations = 10000;
+    let count = 0;
+
+
+    for (let i = 0; i < simulations; i++) {
+      let sum = 0;
+
+      // Roll each die
+      for (let j = 0; j < numDice; j++) {
+        const roll = Math.floor(Math.random() * 6) + 1; // Random integer 1-6
+        sum += roll;
+      }
+
+
+      if (sum === targetSum) {
+        count++;
+      }
+    }
+
+
+    const probability = (count / simulations) * 100;
+
+
+    document.write(`Probability to get sum ${targetSum} with ${numDice} dice is ${probability.toFixed(2)}%`);
+  </script>
+</body>
+</html>
+

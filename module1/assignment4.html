@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Sorting Hat</title>
+    <script>
+        function sortingHat() {
+
+            let name = prompt("What is your name?");
+
+
+            let randomNumber = Math.floor(Math.random() * 4) + 1;
+
+            let house;
+
+
+            else (randomNumber) {
+                case 1:
+                    house = "Gryffindor";
+                    break;
+                case 2:
+                    house = "Slytherin";
+                    break;
+                case 3:
+                    house = "Hufflepuff";
+                    break;
+                case 4:
+                    house = "Ravenclaw";
+                    break;
+                default:
+                    house = "Unknown House";
+            }
+
+
+            document.write(name + ", you are " + house + ".");
+        }
+         window.addEventListener("load",sortingHat() );
+    </script>
+</head>
+<body>
+</body>
+</html>

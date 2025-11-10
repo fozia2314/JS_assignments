@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leap Year Finder</title>
+</head>
+<body>
+  <h2>Leap Years Finder</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const startYear = parseInt(prompt("Enter the start year:"));
+    const endYear = parseInt(prompt("Enter the end year:"));
+
+    let html = "<ul>\n";
+
+    for (let year = startYear; year <= endYear; year++) {
+      if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        html += "   <li>" + year + "</li>\n";
+      }
+    }
+
+    html += "</ul>";
+
+    document.getElementById("output").textContent = html;
+  </script>
+</body>
+</html>

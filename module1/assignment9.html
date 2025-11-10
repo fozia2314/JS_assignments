@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Checker</title>
+</head>
+<body>
+  <h2>Prime Number Checker</h2>
+
+  <script>
+
+    const num = parseInt(prompt("Enter an integer:"));
+
+
+    function isPrime(n) {
+      if (n <= 1) return false; // 0 and 1 are not prime
+      if (n === 2) return true; // 2 is prime
+      if (n % 2 === 0) return false; // even numbers > 2 are not prime
+
+
+      for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+
+
+    if (isPrime(num)) {
+      document.write(num + " is a prime number.");
+    } else {
+      document.write(num + " is not a prime number.");
+    }
+  </script>
+</body>
+</html>
