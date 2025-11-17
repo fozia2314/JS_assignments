@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Numbers Descending</title>
+</head>
+<body>
+    <h2>Enter Numbers Until 0</h2>
+    <button onclick="collectNumbers()">Enter Numbers</button>
+    <h3>Numbers from Largest to Smallest:</h3>
+    <ul id="numberList"></ul>
+
+    <script>
+        function collectNumbers() {
+            let numbers = [];
+            let input;
+
+
+            while (true) {
+                input = prompt("Enter a number (0 to stop):");
+                let num = Number(input);
+                if (num === 0) break;
+                if (!isNaN(num)) {
+                    numbers.push(num);
+                }
+            }
+
+
+            numbers.sort((a, b) => b - a);
+
+
+            let ul = document.getElementById("numberList");
+            ul.innerHTML = ""; // Clear previous list
+            numbers.forEach(n => {
+                let li = document.createElement("li");
+                li.textContent = n;
+                ul.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

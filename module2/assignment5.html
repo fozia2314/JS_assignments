@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unique Number Entry</title>
+</head>
+<body>
+    <h2>Enter Numbers</h2>
+    <button onclick="enterNumbers()">Start</button>
+
+    <script>
+        function enterNumbers() {
+            let numbers = [];
+            let input;
+
+            while (true) {
+                input = prompt("Enter a number:");
+                let num = Number(input);
+
+
+                if (isNaN(num)) {
+                    alert("Please enter a valid number.");
+                    continue;
+                }
+
+
+                if (numbers.includes(num)) {
+                    alert(`The number ${num} has already been entered!`);
+                    break;
+                }
+
+
+                numbers.push(num);
+            }
+
+
+            numbers.sort((a, b) => a - b);
+
+
+            console.log("Numbers in ascending order:");
+            numbers.forEach(n => console.log(n));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Custom Dice Roll</title>
+</head>
+<body>
+    <h2>Custom Dice Roll Simulation</h2>
+    <button onclick="rollCustomDice()">Roll Dice</button>
+    <h3>Dice Rolls:</h3>
+    <ul id="diceResults"></ul>
+
+    <script>
+
+        function rollDice(sides) {
+            return Math.floor(Math.random() * sides) + 1;
+        }
+
+
+        function rollCustomDice() {
+            let sidesInput = prompt("Enter the number of sides on the dice:");
+            let sides = Number(sidesInput);
+
+            if (isNaN(sides) || sides < 1) {
+                alert("Please enter a valid number of sides (at least 1).");
+                return;
+            }
+
+            let maxNumber = sides; // Maximum number on the dice
+            let ul = document.getElementById("diceResults");
+            ul.innerHTML = ""; // Clear previous results
+
+            let roll;
+            do {
+                roll = rollDice(sides);
+                let li = document.createElement("li");
+                li.textContent = `Rolled: ${roll}`;
+                ul.appendChild(li);
+            } while (roll !== maxNumber); // Continue until maximum number appears
+        }
+    </script>
+</body>
+</html>

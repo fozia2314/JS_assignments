@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dice Roll Simulation</title>
+</head>
+<body>
+    <h2>Dice Roll Simulation</h2>
+    <button onclick="rollDiceUntilSix()">Roll Dice</button>
+    <h3>Dice Rolls:</h3>
+    <ul id="diceResults"></ul>
+
+    <script>
+
+        function rollDice() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+
+        function rollDiceUntilSix() {
+            let ul = document.getElementById("diceResults");
+            ul.innerHTML = ""; // Clear previous results
+
+            let roll;
+            do {
+                roll = rollDice();
+                let li = document.createElement("li");
+                li.textContent = `Rolled: ${roll}`;
+                ul.appendChild(li);
+            } while (roll !== 6); // Repeat until roll is 6
+        }
+    </script>
+</body>
+</html>

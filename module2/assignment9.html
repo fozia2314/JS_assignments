@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Even array</title>
+</head>
+<body>
+  <script>
+
+    function even(arr) {
+      let evens = []; // create a new empty array for even numbers
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+          evens.push(arr[i]);
+        }
+      }
+      return evens;
+    }
+
+
+    const numbers = [15, 74, 22];
+
+
+    const evenNumbers = even(numbers);
+
+
+    console.log("Original array:", numbers);
+    console.log("Even numbers array:", evenNumbers);
+  </script>
+</body>
+</html>

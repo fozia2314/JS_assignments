@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reverse Numbers</title>
+</head>
+<body>
+    <h2>Enter 5 numbers</h2>
+    <button onclick="getNumbers()">Enter Numbers</button>
+    <h3>Numbers in Reverse Order:</h3>
+    <ul id="result"></ul>
+
+    <script>
+        function getNumbers() {
+            let numbers = [];
+
+
+            for (let i = 0; i < 5; i++) {
+                let num = prompt(`Enter number ${i + 1}:`);
+                numbers.push(Number(num));
+            }
+
+
+            let resultList = document.getElementById("result");
+            resultList.innerHTML = ""; // Clear previous results
+            for (let i = numbers.length - 1; i >= 0; i--) {
+                let li = document.createElement("li");
+                li.textContent = numbers[i];
+                resultList.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

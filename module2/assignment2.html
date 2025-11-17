@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Participants List</title>
+</head>
+<body>
+    <h2>Participant Names</h2>
+    <button onclick="getParticipants()">Enter Participants</button>
+    <h3>Participants in Alphabetical Order:</h3>
+    <ol id="participantList"></ol>
+
+    <script>
+        function getParticipants() {
+            let participantList = document.getElementById("participantList");
+            participantList.innerHTML = ""; // Clear previous list
+
+
+            let numParticipants = parseInt(prompt("Enter the number of participants:"));
+
+            if (isNaN(numParticipants) || numParticipants <= 0) {
+                alert("Please enter a valid number greater than 0.");
+                return;
+            }
+
+            let names = [];
+
+
+            for (let i = 0; i < numParticipants; i++) {
+                let name = prompt(`Enter the name of participant ${i + 1}:`);
+                names.push(name);
+            }
+
+
+            names.sort();
+
+
+            for (let i = 0; i < names.length; i++) {
+                let li = document.createElement("li");
+                li.textContent = names[i];
+                participantList.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
